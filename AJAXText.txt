@@ -1,1 +1,2 @@
 This is demo for AJAX text call
+From basic JS
