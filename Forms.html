@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
+    <title>Form Demo</title>
+  </head>
+  <body>
+    <form action="response.html" target="_blank" method="post" name="form1">
+      Enter the name:<input
+        type="text"
+        placeholder="Enter the name"
+        name="fullname"
+        required
+        size="9"
+        id="na"
+      />
+      Enter the password:<input
+        type="password"
+        placeholder="Enter the password"
+        name="password"
+        minlength="6"
+        maxlength="10"
+      /><br /><br />
+      Email:<input type="Email" placeholder="Enter the email" name="email" />
+      Telephone:
+      <input
+        type="tel"
+        placeholder="Enter the telephone number"
+        readonly
+      /><br /><br />
+      Number:<input
+        type="number"
+        placeholder="Enter the numbers only"
+      /><br /><br /><br />
+      Gender:<br />
+      Male <input type="radio" name="Gender" value="men" /> Female<input
+        type="radio"
+        name="Gender"
+        value="women"
+      />
+      Transgender<input type="radio" name="Gender" value="other" />
+      <br />
+      <br />
+
+      <br />
+
+      age<input
+        type="number"
+        name="age"
+        min="18"
+        max="60"
+        step="5"
+        placeholder="enter the age"
+      />
+      <br />
+      <br />
+
+      <textarea minlength="10" maxlength="25" name="ad" cols="10" rows="2">
+      </textarea>
+      <br />
+
+      <!-- If we not use the 'name' attribute we can select both values, you mention name then only we can select only one option -->
+      <input type="Hidden" />
+      <br />
+      <!-- Is used to Hide the input field to the user -->
+      <input type="color" value="ffffff" /><br />
+      <br />
+      Languages <input type="checkbox" name="lang" value="En" />English
+      <input type="checkbox" name="lang" value="Te" />Telugu
+      <input type="checkbox" name="lang" value="ka" />Kanada<br /><br />
+      <input type="range" /><br /><br />
+      <input type="file" /><br /><br />
+      <input type="url" /><br /><br />
+
+      <select multiple name="la" size="2">
+        <option value="eg">English</option>
+        <option value="Te">Telugu</option>
+        <option value="ka">Kanada</option>
+        <option value="Tm">Tamil</option>
+      </select>
+
+      <input type="search" /><br /><br />
+      <!-- once we out from the search filed(cliked on enter) automatically form will
+      be submitted so overcome this we need write another form -->
+      <input type="date" /><br /><br />
+      <input type="time" value="00:00:00" /><br /><br />
+      <input type="week" /> <br /><br />
+      <input type="month" /><br /><br />
+      <input type="datetime-local" /> <br /><br />
+      <input type="submit" value="Register" /><br /><br />
+      <input type="reset" disabled /><br /><br />
+      <input type="Button" value="OK" /><br /><br />
+    </form>
+
+    <!-- Append child: -->
+    <div id="roots">
+      <script>
+        const head = document.createElement("h1");
+        head.innerHTML = "Hello world from Java Script program";
+        const r = document.getElementById("roots");
+        r.appendChild(head);
+      </script>
+    </div>
+  </body>
+</html>
+
+<!-- Form tag attributes:
+
+
+    we give the files name where Form data can be handled in Action Attribute html/(back end tool file names).php/.json
+ Action ="url"  -Specifies where to send the form-data when a form is submitted
+ method- Specifies the HTTP method to use when sending form-data
+         post - data will go in object form we can see in Network Tab payload/get-data will go through url
+ rel-Specifies the relationship between a linked resource and the current document
+ name-Specifies the name of a form
+
+ target="_blank" - to display is same Tab or Diff one
+  _blank -	The response is displayed in a new window or tab
+ _self	-The response is displayed in the same frame (this is default)
+ _parent -	The response is displayed in the parent frame
+ _top -	The response is displayed in the full body of the window
+
+framename -	The response is displayed in a named iframe
+Name- By using the name attribute only we can select the one option from the multiple in radio 
+url- uniform resource locator(if not given proper url we get error- http/https and www)
+accept-charset---Specifies the character encodings that are to be used for the form submission
+-->
+
+<!-- Attributes in the input tag:
+  --------------------------------
+
+Name: is Compulsory attribute in the form with this attribute only user entered data is sent to the server.
+    when submit the form we can see in the url
+Required: when any field we mention required. it should not be empty and we get the warning when we try to submit without the value
+maxlength:we can't enter more then this number
+minlength:we have to enter min number we get the warning(when submit the form)
+value:is usefull for difference  for different  types
+   text,email,number, Tel it used as mention the default value but
+   check box and radio button-what ever 'value' we mention in the field that particular value is sent to the server
+max: is useful for number field we get the warning
+min: is useful for number field we get the warning
+step: to change value with particular increment/decrement
+disabled: is useful to disable the button
+size : is useful to define the visibulity  of the characters in the text field.
+checked: is used to show the default selection of the value for checkbox.
+readonly: user can only see the value but they can't change the value
+
+<textarea> - is used to enter the bulk text inside the field
+
+  Attributes:
+
+  cols - that number of columns only view by user remaining scroll to see
+  rows - that number of columns only view by user remaining scroll to see
+
+
+  <select>
+
+    - Tag is alternative to the check box but we can see in dropdown
+    - when we wan't to select the multiple options we have to use the attribute 'multiple'
+    'size' attribute is useful  define to how many options are viewed by the user
+     -'selected'- default selected
+     - if we not mention value tag default tag value will send to the server but we have to minimize the value
+     by using the value tag in the filed.
+    
+
+     Attributes in the Form Tag:
+     --------------------------
+
+      Action - it defines after submission of the form data will go to the which page.
+      Method- defult -'get' means what data we are sending it shows in the url(caled as query string parameter),
+                        'post'-data won't be shows in the 'Url' is the best way for security reasons
+                        and in network tab payload(form data/name) -data will go in object form to the server
+
+
+      Name-Name for the form
+      Target-- is used show the page after submission in the new tab or same tab or new window
+
+
+      metaTag:  is use for search engine optimization  Author,viewport,charset,name,content,property,http-equiv
+
+                viewport- element gives the browser instructions on how to control the page's dimenssions 
+                          and scalling  based on the device we are using
+
+
+                charset-The charset attribute specifies the character encoding for the HTML document 
+                         and needs to be a valid characterncoding (examples include windows-1252, ISO-8859-2, Shift_JIS, and UTF-8). 
+                         UTF-8 (Unicode) is the most widely used and should be used for any new project.
+
+
+
+
+ AnchorTag:
+-----------
+Is used to link the one page to another webpages. under line  and blue color are default in Anchor tag. 
+
+href= hyper reference.  
+
+<a href=""> link name </a>
+
+Atrribute in the Anchor Tag
+
+target="_blank"; - new page will display in diff tab 
+title="About page";  we can use title tag for every HTML element.
+
+
+ImageTag:
+---------
+
+<img src=""  width="" height="" alt="alternative text">
+
+we can write the img inside the anchor tag
+
+<a href="www.google.com"><img src="" width="" height="" >Google</a>
+
+
+ Iframe: 
+ -------
+
+ Is used to display the another website/content inside of webpage/some part of page
+frameborder="0" -- No Border
+frameborder="1" -- we get the border
+
+ <iframe src="" width="" height="" frameborder="0" scrolling="yes/No/auto" ></iframe>
+
+ we can embaed the youtube video/ other page videos/websites in out page/documents
+
+
+
+ Audio&video Tags(Multimedia Tag):
+ --------------------------------
+
+ Support all the formats
+ <audio  controls>
+  <source src="path">
+ </audio>
+ or
+
+ support some formats
+ <audio src="path"></audio>
+
+ 
+ Audio Tag Attributes:
+ ---------------------
+
+ controls --compulsory
+ loop
+ muted
+ autoplay
+ preload
+
+
+ <video controls>
+  <source src="path">
+ </video>
+ or
+
+ support some formats
+ <video src="path" poster="nature.jpg"></video>
+
+ Video tag Attributes:
+ ---------------------
+
+ controls --compulsory
+ loop
+ muted
+ autoplay
+ width
+ height
+ poster -- is used to dsplay the image instead of video untill play  the page.
+
+
+ Details Tag and  Summary Tag:
+ ----------------------------
+
+ is used to display some summary/image/text when clicked on the heading or Icon/text
+
+
+ <details>
+  <summary>paragragh1</summary>
+  lorudgdf dfgdfgdfgdfgd dfgdfgdfgdgf
+  <details>
+
+    <details>
+  <summary>paragragh2</summary>
+  lorudgdf dfgdfgdfgdfgd dfgdfgdfgdgfdfsdfsfsdsdfwef
+  <details>
+
+
+    Datalist:
+    ---------
+    Is used for Autocomplete in the form/dragbox.
+    a-Andra,Arunachal pradesh...
+
+    Here inputTag list Attribute value  must be same as DatalistTag id value
+
+    <label> choose the state<label>
+      <input type="text" list="sports">
+
+
+      <datalist id="sports">
+
+        <option>Cricket</option>
+        <option>Chess</option>
+        <option>volleyball</option>
+        <option>Basketball</option>
+        <option>Hockey</option>
+        <option>Carroms</option>
+
+      </datalist>
+
+
+
+ 
+ AddIcons:
+ ---------
+
+ <  link href="" rel="stylesheet">
+<style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</style>
+<body>
+<span class="material-symbols-outlined">
+download
+</span>
+</body>
+
+
+or 
+By using the fontasome website we need register in the website first.
+Iconmosntr website
+
+
+
+
+
+
+Entities: 
+---------
+
+is used to add the symbols(rupee,copy right...) in the page like as content
+few symbols we can't add through keyboard to do this two things entities are useful.
+
+&.....;(here we can enter entity name or number)
+
+&lt; less than
+ &#60; less than  
+
+
+ &lt;h2&gt;  This is h2 tag  &lt;/h2&gt;-- this is h2 tag by using the code.
+
+ &#60;h2;&#&62; this is h2 tag &#60;/h2;&#&62;
+
+
+
+ &Copy;  To get the copyright symbol in the browser
+ &reg; to get the trademark symbol
+ &#8377; to get the rupee symbol
+&nbsp;-- non brackable space(1 space) is used to provide the space in b/w values
+&emsp; for the tab sapce 
+
+<pre></pre> is used to display along with the spaces.
+
+<xmp>
+  <h1> This is h1 tag</h1>
+</xmp> is used to display data along with tag in  browser it won't decoded by it.
+
+
+
+
+    
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+ 
+
+
+
+-->

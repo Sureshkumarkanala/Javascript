@@ -1,0 +1,138 @@
+
+
+<!-- change backgroundColor of a text filed -->
+<html>
+  <head> </head>
+  <body>
+    <input type="text"  id="inp">Name</input>
+    
+    <script>
+      let txt=document.getElementById("inp");
+      txt.addEventListener("focus",change);
+      function change(e){
+        // this  will display the details of event of a Element
+        console.log(this);
+        console.log(e);
+
+        txt.style.backgroundColor="green";
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+<!-- Mouse events:
+-------------
+
+click
+double click
+mousehover
+mouseout
+mouse move 
+
+
+keyboard event:
+---------------
+
+key down
+key up
+key press
+
+focus event:
+------------
+focus
+Blur 
+focusin
+focusout
+
+form events:
+-------------
+submit
+change
+reset  -->
+
+ <!-- by using the eventListener -->
+ <!-- <html>
+//   <head> </head>
+//   <body>
+//     <button id="b3">eventListener</button>
+//   </body>
+//   <script>
+//     let btn3 = document.getElementById("b3");
+//     btn3.addEventListener("click", changecolor);
+//     function changecolor() {
+//       document.body.style.backgroundColor = "#aaff11";
+//     }
+//   </script>
+// </html> -->
+
+ <!-- Event - is nothing but as Action
+//   In webpage also what ever used do everything is an event
+
+//    who Ganerate events:
+//    ---------------------
+
+//    user- keypress, scroll,focus
+//   System-FontFaceSetLoadEvent, error,abort.....
+
+//    Types of user ganerated events:
+//   -------------------------------
+
+//    .Browser specific events : scrollup/down , resize Browser.....
+//    .DOM/webpage specific events : click , hover , focus.......
+
+// This is Inline Event handlers (using event attributes in HTML)
+//  onClick-Eventlistener
+
+//  Inline styling by using the function -->
+
+ <!-- <html>
+//      <head>
+//       <title>Events</title>
+//    </head>
+//    <boby> -->
+
+<!-- <button onclick="document.body.style.backgroundColor='red'">  -->
+
+ <!-- <button id="btn" onclick="changecolor()">Click me</button> -->
+
+   <!-- <script>
+//          function changecolor() {
+//            document.body.style.backgroundColor = "yellow";
+//          }
+//        </script>
+//      </boby>
+//    </html> -->
+
+<!-- By using the event properties in Javascript -->
+
+ <!-- <html>
+//      <head> </head>
+//      <body>
+//        <button id="b1">Click me</button>
+//        <button id="b2">Annonymus</button>
+
+//        <script>
+//          let btn = document.getElementById("b1");
+//           don't give ()
+//          btn.onmouseover = change;
+//          function change() {
+//            document.body.style.backgroundColor = "pink";
+//          }
+//          By using annonymus function
+//          let btn1 = document.getElementById("b2");
+//          btn1.onclick = function () {
+//            document.body.style.backgroundColor = "orange";
+//          };
+//        </script>
+//      </body>
+//    </html> -->
+
+ <!-- To change the input filed background color -->
+
+
+

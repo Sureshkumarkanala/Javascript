@@ -1,0 +1,117 @@
+ let arr=[
+  {name:'hcl',place:"bglr",year:2001,head:"ceo"},
+    {name:"iBM",place:"bglr",year:2002,head:"HR"},
+  {name:'HP',place:"hyd",year:2003,head:"MD"}
+  ];
+
+
+
+// const names=arr.map((arr)=>arr.name);
+// console.log(names);
+
+op:
+---
+['hcl'
+'Ibm'
+'Hp' ]
+
+// const companyandplace=arr.map((arr)=>arr.place);
+// console.log(companyandplace);
+
+op:
+---
+
+[ 'bglr', 'bglr', 'hyd' ]
+
+
+
+
+
+
+
+const nameandyear=arr.map((arr)=>
+({name:arr.name,year:arr.year}));
+
+console.log(nameandyear);
+
+
+op:
+---
+
+[
+  { name: 'hcl', year: 2001 },
+  { name: 'iBM', year: 2002 },
+  { name: 'HP', year: 2003 }
+]
+
+
+
+
+
+
+
+const headandyear=companies.map((companies)=>
+({head:companies.head,year:companies.year}));
+console.log(headandyear);
+
+
+const compandplace=companies.map((companies)=>
+({name:companies.name,place:companies.place}))
+
+console.log(compandplace);
+
+
+const M=companies.map((companies)=>
+({name:companies.name,place:companies.place,
+year:companies.year,head:companies.head}));
+
+console.log(M);
+
+
+
+// const a=companies.map((companies)=>
+// ({name:companies.name,year:companies.year}));
+// console.log(a);
+
+
+
+// const k=companies.map((comapnies)=>comapnies.name);
+// console.log(k);
+
+
+// const n=companies.map((companies)=>
+// ({k:companies.year}));
+// console.log(n);
+
+
+
+const mp=companies.map((companies)=>
+({name:companies.name,year:companies.year}));
+console.log(mp);
+
+
+const z=mp.map((mp)=>(mp.name,mp.year));
+console.log(z);
+
+
+----------------------------------------------------------
+
+ let arr=[
+  {name:'hcl',place:"bglr",year:2001,head:"ceo"},
+    {name:"iBM",place:"bglr",year:2002,head:"HR"},
+  {name:'HP',place:"hyd",year:2003,head:"MD"}
+  ];
+  
+ 
+const z=arr.map((arr)=>({company:arr.name,established:arr.year}));
+console.log(z);
+
+
+op::
+-----
+
+[
+  { company: 'hcl', established: 2001 },
+  { company: 'iBM', established: 2002 },
+  { company: 'HP', established: 2003 }
+]

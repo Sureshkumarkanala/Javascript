@@ -1,0 +1,37 @@
+1.what is proto object?
+
+Is object/property is added to the every  array, function, object which we are created in javascript .
+
+                             OR 
+
+Prototype property is used to add another property to  the Constructor obj
+
+arr__proto__ == array.prototype == object.prototype == object.__proto__ ==fun.__proto__.__proto__
+
+
+object.prototype= obj2__proto__(poiniting This object)
+
+This property is created by default on the prototype property of every object and is inherited by
+all objects created by that constructor.
+
+Is a object property Used to add the new properties and methods to the existing object  with all instances we can use proto property.
+
+2. ways of creating the object in Javascript?
+
+In 5 ways we can create a object in javascript
+
+1. Object Literals
+2.using new keyowrd with object constructor
+3. using new keyword with a constructor function
+4.object.create()method
+5.classes
+
+
+3.Constructor function?
+
+Is nothing but a funcion  that creates a object for us when we called with new keyword.
+
+function person(name){
+    this.name=name;
+}
+const name1= new  person("Arun);

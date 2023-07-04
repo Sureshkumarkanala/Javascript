@@ -1,0 +1,605 @@
+#main {
+  background-color: "Blue";
+  display: "flex";
+  justify-content: "center";
+}
+/* #btn {
+  background-color: yellow;
+  text-align: "center";
+  color: "pink";
+} */
+
+#btn {
+  background-color: blueviolet;
+  margin-left: 40rem;
+
+  /* margin-top: 1rem; */
+}
+/* #data {
+  display: flex;
+} */
+
+/* {px- pixel based,
+  % - based on the parent,
+  vm/vh-based on the scrren size,
+  rem- based on the root font size(16),
+  em-based on the element font size} */
+
+/* positions: 
+---------- 
+static- as per <body> flow element will be placed- default.
+Absolute- based on the parent postion(if no parent based on the body) based on the screen.
+relative-based on the default position(static) based on the flow from there position will change
+fixed-means that particular element won't move beyond the screen(always element visible at same position ex- Navbar)
+sticky-mixup of reative and fixed.-to stop the moment of the tag from particular moment which is  define by using <top=40px>.
+it will scroll based on the postion but once reched 40px from top it won't move/scroll.
+
+
+
+Selectors:
+----------
+
+Simple selector
+Combinator selectors
+Pseudo-class selector
+Pseudo-element selector
+Attribute selector
+
+
+Simple selector:
+----------------
+-Tag based (P,h1,span,.......)
+-#id based(Unique 'id' )
+-.class  based 
+
+
+Combinator selectors:
+---------------------
+ 
+Child selector(>) -- div > p
+Descendent selector(space)   div P
+Adjacent sibling selector(+)  p+h2(next to the p adjacent is h2 so style is applicable to h2)
+General Sibling Selector(~) p~h2(after p any where(child inside the same div) h2 is present style applicable )
+
+
+
+Pseudo-element selectors:
+-------------------------
+
+selector::pseudo-element{
+  property:value
+}
+
+:: first-letter
+::first-line
+::before
+::after
+::slection
+::content
+::marker- is used define the style to the li/ol 
+
+::marker { 
+  color: green;
+  font-size: 23px;
+}
+
+.Coffee
+.Tea
+
+1.Milk
+2.First
+
+
+Attribute selectors:
+--------------------
+
+used to style an element with specified attribute or attribute value.
+
+selector[attributeName]{
+property:value ;
+}
+
+EX:
+----
+p[titile]-p=selector, title=attributeName
+p[titile="Mainpage"]-p=selector, title=attributeName, value-Mainpage
+
+
+attribute
+[attribute=value] -- value exact match
+[attribute~=value]---if the value exist anyware it will apply
+[attribute|=value]--Mainpage/Mainpage-  value or aftervalue-  style will apply
+[attribute^=value]-- value / value exist any where starting --style will apply
+[attribute$=value] --end with value value=splMainpage-style will apply
+[attribute*=value] -any where in the value exist -style will apply
+
+
+
+Pseduo-Classes:
+---------------
+
+Apply the style based on the state of a element.
+
+
+selector : pseudo-classname {
+  property:-ms-value;
+}
+
+
+hover -apply when hover 
+link--will apply before visit the site
+visited--style wil aplly after visit the site
+active- style will apply when click on the link
+unvisited--style will apply  for unvisited url/link
+target-- when we click on the link navigating to the page the url is in target state
+focus --when user enetering the data in the form at that time inpiut field in the focus state
+required-apply the style for particular required field
+valid-satisfy the condition based on the condition
+invalid- means unsatisfy the condition(ex: minlenght>5)
+enabled- default make button enable
+disabled- to make the button in disable state
+default - to select the dafult value in checkbox and radio buttons
+checked - to define style to checked field
+unchecked
+optional--when filed is optional to apply the style for particular field.
+read-only-to make filed is read-only
+read-write-to make field as read-write this is default
+in-range --apply the style when value in the particular range
+out-of-range--apply the style when value in outof range
+
+
+
+
+empty -- <p></p> this is empty-- <p>1</p> this is not empty
+not
+first-child--apply the style for first child in the tag(li:first-child{when li is a first child style will apply})
+last-child-apply the style for last  child in the tag(all)
+nth-child
+nth-last-child
+nth-last-type
+nth-of-type
+only-child-if have only one child inside the tag
+only-of-type--particulr type
+first-of-type--first of that particular tag style should be applied to that one
+last-of-type----last of that particular tag style should be applied to that one
+
+
+
+
+check box for languages-
+input:default+label {
+  color:
+  backgroundcolor:
+}
+
+
+p:not(.classname){
+}
+apply the style for which classname doesn't match
+
+P:first-child{
+}
+
+
+P:last-child{
+  //apply the style for the last child any where in the program as paragaraph
+}
+p:nth-child(3){
+  //here paragragh tag should be 5 child of any where in the program
+}
+p:nth-child(2n+1){
+p:nth-child(an+b){
+
+  //here paragragh tag should be 5 child of any where in the program
+  //a ,b are 0,1,2,3,.....
+  // 'n' start from 0,1,2,.....
+}
+
+
+
+BOX-SIZZING:
+------------
+default content-box
+
+box-sizzing:border-box/initial/inherit
+
+
+content-box- we mention width only for content not for border,margin-this is defult
+border-box-along with the  content, border ,padding and margin
+
+
+
+Color-formates:
+---------------
+
+* colorNames
+*rgb(0-255,0-255,0-255)
+* Hexadecimal-#A0fddd(0-9,A-F)
+*HSL(color,saturation,lighness)-hsl(10,20%,30%) --ViewSaturationlight(0-360,0-100%)
+*RGBA-(Red,green,blue,A-means alpha it represents-opacity(0-1 ))
+*HSLA- (color,saturation,lighness,Alpha)
+
+
+
+CSS Units:
+----------
+
+* PX-%-(Absolute size)-- 1 px-0.23 cm
+* % -Related to the parent width/height(5% means parent width 100px means in that 5%)
+*vw/vh-(Related to the screen size)
+*rem-(Related to root element font size-defult font size of root element (html)-16px)
+*em-(Related to its font size)
+
+Positions:
+----------
+
+Static: Default-as per document flow it will place in UI
+
+Relative: Position based on the element position/static as per document flow
+
+Absolute: Element postion changed based on the parent position or no parent based on the body Tag/element
+
+
+Fixed: element postion  won't move when we scrolled  the page also ex: Nav bar will placed at the top of the page
+ when we use fixed and absolute to the element consider as element not present and it will may overwrite the other elements
+
+Sticky: combination of relative and fixed-when scroll the page from top(top: 50px like that) to particular postion
+        the element won't be move on page.
+        
+
+Inherit: based on the parent element
+
+
+BOX-MODEL:
+-----------
+
+Margin
+Border
+Padding
+Content
+
+To identify the Box model space we need to apply background color.
+
+width/height= Margin+padding+border+content width/height.
+
+
+For Inline elements  Top  and Bottom properties of the Margin will over ride them.
+to overcome this apply margin-bottom for upper element
+Border: solid/dashed/dotted 3px color ;
+
+
+Float and Clear:
+----------------
+
+Float & clear are used to create the Layout in initial days later Flexbox and Grid are came in to the picture
+it work based on the inside the parent element where we need to  place the child.
+
+
+Float:
+------
+*left
+*right
+*none
+
+clear: is used to get the data in next line
+
+  clear:none;
+
+
+*left(Left side  another elements are not allowed for this Tag)
+
+*right
+
+*both
+
+
+
+Z-Index:
+--------
+
+when ever to elements are placed in the same postion which has to show upper desided  by the z index.
+To apply Z-index value Position attribute(absolute/fixed/relative/sticky..) is compulsory 
+
+
+BOX-SHADOW:
+-----------
+min 2 values(compulsory) ,max 5 values
+
+horizontal offset- x-axis(compulsory -ve value left side, +ve value right side)
+vartical offset - y-axis(compulsory  -ve value down side, +ve value upside )
+blur radius
+spread distance
+shadow color(default color- black)
+
+
+
+
+box-shadow:  10 px 1px 3px 4px grey;
+
+ To get the 4 sides of the shadow(Horizantal,vertical offset must be 0)
+
+box-shadow:  10px 1px 3px 4px grey,
+             -10px  -1px 3px 4px grey;
+
+             or 
+
+             0px 0px 10px color;
+
+
+Gradient: 
+---------
+
+Is used to apply the multiple Background colors/Text  to the element
+
+background, backgroundImage tags we can apply Gradient
+
+Linear Gradient-- To apply the Horizantally(min 2 colors)--> Top to Bottom 
+circular Deep Gradient
+Repeating linear Gradient
+Repeating circular Gradient
+
+
+Background:linear-gradient(rgb(101,122,133),rgb(122,233,344));
+
+TO TEXT:
+---------
+background: required colors
+we need give the color: transparent   to disapear the default color of the  text.
+-webkit-backgroundclip: text;(To support all the browsers)
+
+
+Flexbox:
+--------
+Flex is used to design a layout in one direction(row/column wise)
+
+parent properties: 
+------------------
+
+display: flex 
+
+flex-direction: row|row-reverse(top right corner)|column|column-reverse(start from left bottm)
+
+flex-wrap: nowrap|wrap|wrap-reverse(is used to get the children in nextline if required other wise browser decrese the chilren size  and fit in to single line)
+
+flex-flow: <'flex-direction'>||<'flex-wrap'>- is shorthand property means we can write flex-wrap,flex-flow in one line
+
+justify-content: flex-start|flex-end|center|space-between|space-around|space-evenly
+(works based on the main-axis)
+
+space-between---arrange the totalspace  in between the children
+
+space-around---arrange the totalspace  in around the children
+
+
+align-item:flex-start|flex-end|center|baseline|stretch
+
+align-content: flex-start|flex-end|center|space-between|space-around|stretch
+
+
+
+flex-direction: row--> main-axis:x-axis, cross-axis: y-axis;
+
+flex-direction: column--> main-axis:y-axis, cross-axis: x-axis;
+
+justify-content: align flex item/children along with main axis;( if x main axis)
+
+align-content:  align flex item/children along with cross axis;( if x main axis , y is cross axis)
+ 
+
+
+Children properties:
+---------------------
+
+order: integer -how children arrangment 0,1,2,3...
+
+flex-grow: number (default 0)-align the available space in between the children 
+
+flex-shrink: number --decrase the size of the children when space is not available for the children shrink is apply
+
+flex-basis: length|auto;
+
+flex: 'flex-grow',flex-shrink,flex-basis';
+
+align-self: auto| flex-start|flex-end|center|baseline|stretch(align based on the cross-axis);
+
+
+
+
+
+
+GRID:
+-----
+
+Grid is used to align the items in two dimenssions in a page.
+
+parent:
+-------
+
+display: grid,
+grid-template-columns:(200px 300px) or 1fr 3fr - How coulmns(2) are required in the grid along with the size we need to mention.
+grid-template-rows:(100px, 200px,300px) or 1fr 1fr 2fr -How rows(3) are required in the grid along with the size we need to mention.
+grid-gap:  is maintain the gapin between the rows & columns are same(10 px) for row/column or 10px 20px row ,column
+row-gap: To maintain the gap between the rows in a grid
+column-gap:To maintain the gap between the columns in a grid
+
+
+align-item:(in where content display-column)  start/center/end/strech-is deafult(define the  space which is occupiedby the grid based on the content  not  cell column/row value )
+justify-items:(in where content display-row )  start/center/end/strech-is deafult(define the  space which is occupiedby the grid based on the content  not  cellcolumn/row value )
+
+grid-template: 
+grid-template-areas: is used to define the cell based on the names
+                     child1 child1 child1
+                     child2 child3 child3 
+
+                     and in child also we need mention 
+                     child1{
+                      gird-area:child1;
+                     }.. like this 
+
+                     or 
+
+                     repeat(3,300px)
+ 
+
+align-content- start/center/end(align the cells in verticular direction  of the Grid)
+justify-content-start/center/end(align the cells in horizontal direction  of the Grid)
+
+
+Children:
+---------
+
+horizantal-justify
+vertical-align
+
+grid-column-start: where to start in page(1  line)
+grid-column-end:where to end in page(4 line)--menas 3 cells(start 1 end 3 cell)
+grid-column : (start end )1/4
+grid-row-start:  where to start in page in row line
+grid-row-end: where to end in page in row line
+grid-row:2/5(start at 2 row line and end 5 line )
+
+grid-area:
+
+.item1 {
+  grid-area: 2 / 1 / span 2 / span 3;
+}
+
+The syntax is grid-row-start / grid-column-start / grid-row-end / grid-column-end.
+
+Item1 will start on row 2 and column 1, and span 2 rows and 3 columns:
+
+align-self: flex-start;start at the grid occupy based on the content not the column/row space
+justify-item: all cells context will be start/end/center
+justify-self:   for particular cell context will be start/end/center in horizantal
+
+Transitions: 
+-------------
+
+is used to apply the style(width/height of the element) for an element in slow manner not immediately.
+
+Transition: "sec time"
+Transition: 3 sec;
+Transition :width 3ms;
+Transition :height 5ms;
+Transition :height 3sec linear delaytime;
+
+Transition :all 3ms; --> all changes in 3 sec 
+Transition :width 2 ms,height 3 s,background-color 5ms; -->individually apply the style
+
+Trasition-timming-function- ease easein easeout ease-in-out linear;
+(Default -leaner) - define speed of the change 
+
+
+transtion: property(widh,height,color..), time(s/ms),Trasition-timming-function, transition-delay;
+
+
+
+
+
+
+#one:hover,#two:hover{
+  width:200px;
+  height:300px;
+}
+
+
+Transformations:
+----------------
+
+To change the shape ,size,position  and of a element.
+
+Transform: translate, scale, rotate,skew
+
+
+translate: is used to element from x-axis-right side + ve value, leftside- value ,y-axis(35px,-20px or 20% 20%)
+
+transform:translateX(20%)
+transform:translateY(23%)
+
+
+scale: is used to increase the element based on the width,height of a element.
+
+transform:scale(2);  width,height are multiple by 2 times
+scale(2,3) x-axis 2 times, y-axis 3times
+transform:scaleX(2);
+transform:scale(3);
+
+rotate(45 degrees)-->both degrees 0 to 360*
+
+rotateX(45degrees)
+rotateY(45degrees)
+
+
+skew: is used to slang(move) the element
+
+skew(23 degree)-->0 to 90* in both axis +Ve  and - ve value will accept
+
+skewX(23 degree)
+skewY(23 degree)
+
+
+Transform: prespective(100px) scale3d(1,2,4) --> is used to rotate the value in 3 dimenssion here
+by using the prespective we can scale the z axis
+we can use translate, scale, rotate,skew all for z-axis also
+
+
+
+
+Mediaqueries:
+-------------
+
+This are used to design the responsive web pages.
+means adjust the layout size based on the  browser.  
+
+it has
+ screen
+ print
+ all option
+
+
+ @media screen  and (max-width:400px) {
+
+  body {
+    background-color: red;
+  }
+ 
+}
+
+in above mediaquery the screen(device must have the screen) size below 400  only it will apply.
+
+@media all , (max-width:400px) (min-width:200px){
+
+  body {
+    background-color: red;
+  }
+ 
+}
+
+in above mediaquery the screen(device must have the screen) size below 400 it will apply  here " , " act like as or.
+
+
+
+
+CSSVariables:
+--------------
+
+before use the variable we have to define it first;
+
+localscope:
+-----------
+
+
+p{
+--primary-color:rgd(222,3,4);
+
+color:var(--primary-color);
+}
+
+when define the variable in the root consider variable have global scope
+
+:root{
+--primary-color:rgd(222,3,4);
+
+}
+
+*/

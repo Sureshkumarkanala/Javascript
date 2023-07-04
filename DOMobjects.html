@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<head>
+    
+</head>
+<body>
+    
+        <div id="first">
+            <h1  >This is h1 tag Accessing the content by using the ID...<br /></h1>
+         <h1 id="child"><span>This is child</span> </h1>
+        </div> 
+        <!-- <h1 id="second"> This element id is second</h1>
+        <p>This is Paragraph added to the child of id first</p> -->
+
+        <!-- <h2 id="second">This is h2 tag id second </h2> -->
+        <script>
+        // Accessing the content by using the ID
+        var data=document.getElementById("first")
+        //  console.log(data.innerText);
+
+        //creating the new tag and  and add  data in to the browser
+
+        // var child=document.createElement("div");
+        // child.innerText="This is Paragraph added to the child of id first";
+        // console.log(child);
+
+        // display in to the browser 
+        //  var parent=document.getElementById("first");
+        //  parent.append(child);
+
+         //Adding the another tag 
+         //Adding the tag between other tags, actually append is used to add at the end of the tag
+
+    //   var add=document.createElement("span");
+        // add.innerHTML="<span>This is span Tag adding at last by using append Tags</span>"
+        // parent.append(add);
+
+
+// var adding=document.createElement("p");
+// adding.innerText=("This paragraph tag adding in between the tags by using insertBefore")
+//  parent.insertBefore(adding,add);
+
+
+
+// delete the element
+// var rem=document.getElementById("child");
+// rem.innerHTML="<span> Removing the element by using Remove Tag</span>";
+// console.log(rem);
+// rem.remove();
+
+//Removing the child by using the parent
+// <div id="first">
+//             <h1  >This is h1 tag Accessing the content by using the ID...<br /></h1>
+//          <h1 id="child"><span>This is child</span> </h1>
+//         </div> 
+//  var parent=document.getElementById("first");
+//  console.log(parent);
+//  var childnode=document.getElementById("child")
+//  parent.removeChild(childnode);
+
+//difference between innerText and InnerHTML
+        // console.log(parent.innerText);
+        //it will give onlt txt inside the particular Tag
+        //This is h1 tag Accessing the content by using the ID
+        // console.log(parent.innerHTML);
+        // console.log(add.innerHTML);
+        //it will give text along with the tag
+
+
+        //Replace with another tag
+        //Here child tag is replaced with new rep tag
+
+        var rep=document.createElement("h1");
+        rep.innerText="This is the replacement Tag";
+
+        child.replaceWith(rep);
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.Heading {
+  color: brown;
+}
+#Heading1 {
+  text-align: center;
+  background-color: aqua;
+}
+.form {
+  text-align: center;
+
+}
+
+.cotainer{
+  display:flex;
+}
