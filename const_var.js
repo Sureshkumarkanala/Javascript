@@ -1,4 +1,4 @@
-//const  :inside function
+// const  :inside function
 // const e = 10;
 // function test() {
 //   console.log(e); //10

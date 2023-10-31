@@ -1,8 +1,8 @@
-//Normal function
-// console.log(test); //Display total function
-// // output:// ƒ test(a) {
-// //   return a * 20;
-// // }
+// Normal function
+console.log(test); //Display total function
+// output:// ƒ test(a) {
+//   return a * 20;
+// }
 // console.log(test()); //NaN
 // function test(a) {
 //   return a * 20;

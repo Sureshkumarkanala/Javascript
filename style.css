@@ -363,7 +363,7 @@ flex-wrap: nowrap|wrap|wrap-reverse(is used to get the children in nextline if r
 
 flex-flow: <'flex-direction'>||<'flex-wrap'>- is shorthand property means we can write flex-wrap,flex-flow in one line
 
-justify-content: flex-start|flex-end|center|space-between|space-around|space-evenly
+justify-content: flex-start|flex-end|center|spac  e-between|space-around|space-evenly
 (works based on the main-axis)
 
 space-between---arrange the totalspace  in between the children

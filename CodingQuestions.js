@@ -46,28 +46,44 @@
 
 //Remove duplicate values in the array
 
-// let arr2 = [12, 55, 44, 35, 90, 13, 55, 1];
+arr = [1, 2, 3, 4, 5, 5, 6, 6, 8];
 
-// function uniquearr(arr2) {
-//   let unique = [];
+//1 way using set
 
-//   for (ele of arr2) {
-//     if (unique.indexOf(ele) == -1) {
-//       unique.push(ele);
-//     }
-//   }
-//   return unique;
-// }
-// // console.log(arr2);
-// // console.log(uniquearr(arr2));
+const unique1 = [...new Set(arr)];
+console.log("1 way using set", unique1);
+//2 way using Arrayfrom
+const unique2 = Array.from(new Set(arr));
+console.log("2 way using Arrayfrom", unique2);
 
-// let unique2 = new Set(arr2);
-// console.log(unique2); // we get in object format
-// let unique3 = [...new Set(arr2)]; //by using the destructure and spread operator we get in array format
-// console.log(unique3);
+//3 way using filter
+const unique3 = arr.filter((value, index) => arr.indexOf(value) !== index);
+console.log("3 way using the filter", unique3);
 
-// let x = unique3.sort().reverse();
-// console.log(x);
+//4 way using forEach
+function unique4(arr) {
+  console.log("inside function", arr);
+  const unique = [];
+  arr.forEach((value) => {
+    if (!unique.includes(value)) {
+      unique.push(value);
+    }
+  });
+  return unique;
+}
+console.log("4 way by usinf forEach", unique4(arr));
+
+//5 way using the reduce
+function uniqueele(arr) {
+  return arr.reduce((prev, current) => {
+    if (!prev.includes(current)) {
+      prev.push(current);
+    }
+    return prev;
+  }, []);
+}
+
+console.log("5 way using reduce", uniqueele(arr));
 
 // Question 4:
 // -----------
@@ -132,3 +148,20 @@ for (ele of arr5) {
 }
 
 console.log(maxall);
+
+//Question 6:
+// ------------
+
+// Display the names in a array of object based on the Condition
+
+const person = [
+  { name: "Arun", age: 30 },
+  { name: "Suresh", age: 30 },
+  { name: "Dummy", age: 24 },
+];
+console.log(person);
+
+const result = person.filter((list) => list.age < 25);
+console.log("result is", result);
+const names = result.map((list) => list.name);
+console.log("name is", names);

@@ -1,14 +1,18 @@
-
-
 <!-- change backgroundColor of a text filed -->
-<html>
+<!-- <html>
   <head> </head>
   <body>
     <input type="text"  id="inp">Name</input>
+    <br />
+    <input type="text" class="bg" />BG_color
+    <input type="text" class="bg" />Color
+    <input type="text" class="bg" />CLR
+
     
     <script>
       let txt=document.getElementById("inp");
-      txt.addEventListener("focus",change);
+      console.log(txt);
+      txt.addEventListener("click",change);
       function change(e){
         // this  will display the details of event of a Element
         console.log(this);
@@ -16,23 +20,29 @@
 
         txt.style.backgroundColor="green";
       }
+
+
+      let bgc=document.getElementsByClassName ("bg");
+    for(let i=0;i<bgc.length;i++){
+      bgc[i].addEventListener("click",bgcolor);
+      function bgcolor(e){
+        console.log("Event Listen ")
+        console.log(e);
+        bgc[i].style.backgroundColor="red";
+      }
+      }
     </script>
   </body>
-</html>
-
-
-
-
-
+</html> -->
 
 <!-- Mouse events:
--------------
+------------------
 
 click
-double click
-mousehover
+doubleclick(dblclick)
+mouseover
 mouseout
-mouse move 
+mousemove 
 
 
 keyboard event:
@@ -55,22 +65,43 @@ submit
 change
 reset  -->
 
- <!-- by using the eventListener -->
- <!-- <html>
-//   <head> </head>
-//   <body>
-//     <button id="b3">eventListener</button>
-//   </body>
-//   <script>
-//     let btn3 = document.getElementById("b3");
-//     btn3.addEventListener("click", changecolor);
-//     function changecolor() {
-//       document.body.style.backgroundColor = "#aaff11";
-//     }
-//   </script>
-// </html> -->
+<!-- by using the eventListener -->
+<html>
+  <head> </head>
+  <body>
+    <style>
+      body {
+        background-color: green;
+      }
+      @media screen and (min-width: 700px) {
+        body {
+          background-color: red;
+        }
+      }
+    </style>
+    <button id="b3">eventListener</button>
+  </body>
 
- <!-- Event - is nothing but as Action
+  <script>
+    let btn3 = document.getElementById("b3");
+    btn3.addEventListener("dblclick", changecolor);
+    function changecolor() {
+      console.log("inisde function");
+      document.body.style.backgroundColor = "#aaff11";
+    }
+  </script>
+  <!-- <script>
+    let btn = document.getElementById("b3");
+    btn.addEventListener("hover", colorchange);
+
+    function colorchange() {
+      console.log("inisde function");
+      document.body.style.backgroundColor = "Green";
+    }
+  </script> -->
+</html>
+
+<!-- Event - is nothing but as Action
 //   In webpage also what ever used do everything is an event
 
 //    who Ganerate events:
@@ -90,7 +121,7 @@ reset  -->
 
 //  Inline styling by using the function -->
 
- <!-- <html>
+<!-- <html>
 //      <head>
 //       <title>Events</title>
 //    </head>
@@ -98,9 +129,9 @@ reset  -->
 
 <!-- <button onclick="document.body.style.backgroundColor='red'">  -->
 
- <!-- <button id="btn" onclick="changecolor()">Click me</button> -->
+<!-- <button id="btn" onclick="changecolor()">Click me</button> -->
 
-   <!-- <script>
+<!-- <script>
 //          function changecolor() {
 //            document.body.style.backgroundColor = "yellow";
 //          }
@@ -110,7 +141,7 @@ reset  -->
 
 <!-- By using the event properties in Javascript -->
 
- <!-- <html>
+<!-- <html>
 //      <head> </head>
 //      <body>
 //        <button id="b1">Click me</button>
@@ -132,7 +163,4 @@ reset  -->
 //      </body>
 //    </html> -->
 
- <!-- To change the input filed background color -->
-
-
-
+<!-- To change the input filed background color -->

@@ -3,16 +3,17 @@
 // console.log(s.length);
 //primitve datatype
 // var str = "yamuna";
-// console.log(str);
+// console.log("string is ", str);
 //convert from string to object
 // var m = new String(str);
-// console.log(m);
+// console.log("string obj is", m);
+// console.log(m[3]);
 // for (let i = 0; i < m.length; i++) {
-//   console.log(m[i]);
+//   //   console.log(m[i]);
 // }
 //convert from string to array
 // const n = str.split("");
-// console.log("split", n[0]);
+// console.log("split", n, n[0]);
 
 //charAt();
 // indexOf();
@@ -25,6 +26,7 @@
 // startWith();
 // endsWith();
 // slice();
+//substring();
 // substr();
 // includes();
 // charCodeAt();
@@ -35,17 +37,19 @@
 // it will  print  the character at index which your given
 //if at that index chat not exist it won't give any value
 
-str = "Arunkumar";
+// str = "Arunkumar";
 // console.log(str.charAt(3));
 // console.log("charAt", str.charAt(10));
+// console.log(str.charAt(1));
 
 //***********************IndexOf*****************************/
 //is used to get the indexof the particular char or string
 //it's a case scensitive if char/string not exist we will get -1
+str = "Arunkumar";
 
 // console.log(str.indexOf("s")); //-1
-// console.log(str.indexOf("kumar")); //4-k starts at position 4(we will get index only total string exist)
-// console.log(str.indexOf("A")); //0
+// console.log(str.indexOf("kumar")); //4- k starts at position 4(we will get index only first letter in the string)
+// console.log(str.indexOf("k"));
 
 // *****************LastIndexOf***********************************
 
@@ -73,20 +77,31 @@ str = "Arunkumar";
 // console.log(add);
 // console.log(add);
 
-// ***************************trim*************************************
+// str1 = "Suresh";
+// str2 = "kumar";
+// str3 = "kanala";
+// var add = str3.concat(str1, str2);
+// console.log(add);
+
+//  ***************************trim*************************************
 // it will remove the space in the given string at first at last
 // str4 = "    A R U N   ";
 // str3 = str4.trim();
 // console.log(str3);
 
-//**************************split****************************************/
+// str1 = "  Syref   ";
+// str2 = str1.trim();
+// console.log(str2.length);
+// **************************split****************************************/
 // split(saperator, limit);both optional
 // it divides the string in to an array  of substrings based on separator
 // str5 = str.split();
 // console.log(str5); //string coverted as array of array-['Arunkumar']
-// // console.log(str5[0]); //converted as a normal string-Arunkumar
+// str6 = str.split("");
+// console.log(str6); //string coverted as array of array-['A', 'r', 'u', 'n', 'k', 'u', 'm', 'a', 'r']
+// console.log(str5[0]); //converted as a normal string-Arunkumar
 // // console.log(str5[0][2]); //-u
-// var arr = ["a", "b", "c", "d"];
+// var arr = ["a", "b", "c","d"];
 // var str6 = str.split("");
 // //["A", "r", "u", "n", "k", "u", "m", "a", "r"];
 // console.log(str);
@@ -115,9 +130,10 @@ str = "Arunkumar";
 // console.log(str.endsWith("A")); //false
 // console.log(str.endsWith("r")); //true
 // console.log(str.toUpperCase().endsWith("R")); //true
-//**********************splice****************************************/
+//**********************slice****************************************/
 
 //is used to get the some part of the string.
+//create the new string no impact on the original array
 //[0]'A',[1] 'r',[2] 'u',[3] 'n',[4] 'k',[5] 'u', [6]'m',[7] 'a',[8] 'r']
 // console.log(str.split(""));
 // console.log(str.slice(1, 3)); //ru
@@ -131,6 +147,7 @@ str = "Arunkumar";
 
 //**********************substring****************************************/
 // str = "Arun kumar";
+// substring=slice
 
 // // it will display the value inside the string
 // // work same as slice but -ve indexes are not valid in substr
@@ -167,10 +184,10 @@ str = "Arunkumar";
 
 // console.log(str.repeat(4)); //Arun kumarArun kumarArun kumarArun kumar
 
-//**********************Repeat****************************************/
+// **********************Replace****************************************/
 // is used to replace the substring inside the actual string
-//replace only 1 time at initial occurence
-//By using the  Regular expression we can change at every where
+// replace only 1 time at initial occurence
+// By using the  Regular expression we can change at every where
 
 // console.log(str.replace("Arun", "Suresh").replace("kumar", "yamuna")); //Suresh yamuna
 
@@ -179,3 +196,37 @@ str = "Arunkumar";
 // console.log(spl.replace("A", "K")); //KrunAnu Anand
 // console.log(spl.replace(/A/g, "K")); //KrunKnu Knand
 // console.log(str);
+
+/* const num=200;
+console.log(num);
+const num1= new Number(500);
+console.log(num1); */
+/* 
+console.log(num1.toFixed(3));//500.000
+console.log(num1.toString().length);//3 */
+/* 
+const prenum=1233.4684;
+console.log(prenum.toPrecision(4));//1233
+console.log(prenum.toPrecision(5));//1233.5
+console.log(prenum.toPrecision(6));//1233.47
+console.log(prenum.toPrecision(7));//1233.468 */
+
+console.log(Math);
+console.log(Math.abs(-2)); //2
+
+num3 = 4.22;
+/* console.log(Math) 
+console.log(Math.abs(-2));//2
+console.log(Math.round(num3));//4
+console.log(Math.ceil(num3));//5
+console.log(Math.floor(num3));//4 */
+
+console.log(Math.random()); //0-1 only it will give
+console.log(Math.random() * 2);
+console.log(Math.floor(Math.random() * 2)); //1
+
+//To get value in between 10 to 20
+min = 10;
+max = 20;
+
+console.log(Math.floor(Math.random() * (max - min + 1) + min));

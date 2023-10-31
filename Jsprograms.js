@@ -6,12 +6,13 @@ function a() {
   }
 }
 a();
+console.log(a instanceof Object);
+
 // console.log(arr);
 // arr.push("Alekhya");
 // console.log(arr);
 // console.log(typeof arr);
 // console.log(Array.isArray(arr));
-console.log(a instanceof Object);
 
 // arr.push();
 

@@ -1,19 +1,26 @@
 // Filter-perform on hole array based on the given condition and return the new array
-// find-once given condition satisfied stop the exection and return first result
-// some-it return true/false based on the given condition(once condtion satisfied written true and stop execution)
-// reduce-perform the operation on the array based on the operation and return one value asa result
-// (we need to perform loop /rotation in array we use reduce provide the initial value, accumulator)
-// every-if all the elemnts in the array satisfies condition return true, if one element fail the condition also return flase
-//forEach modify the original array but doesn't retrun any thing
-// // map modify the original array and return the new array.
-// const grocerylist = [
-//   { name: "Apple", price: 50, category: "fruits" },
-//   { name: "orange", price: 60, category: "fruits" },
-//   { name: "tamoto", price: 30, category: "veg" },
-//   { name: "Carrot", price: 20, category: "veg" },
-// ];
 
-//push the element in to array
+// find-once given condition satisfied stop the exection and return first result
+
+// some-it return true/false based on the given condition(once condtion satisfied written true and stop execution)
+
+// reduce-perform the operation on the array based on the operation and return one value as a result
+// (we need to perform loop /rotation in array we use reduce provide the initial value, accumulator)
+
+// every-if all the elemnts in the array satisfies condition return true, if one element fail the condition also return flase
+
+//forEach modify the original array but doesn't retrun any thing
+
+// // map modify the original array and return the new array.
+
+const grocerylist = [
+  { name: "Apple", price: 50, category: "fruits" },
+  { name: "orange", price: 60, category: "fruits" },
+  { name: "tamoto", price: 30, category: "veg" },
+  { name: "Carrot", price: 20, category: "veg" },
+];
+
+console.log(grocerylist); //push the element in to array
 
 // grocerylist.push({ name: "milk", price: 25, category: "dairy" });
 // console.log(grocerylist);
@@ -30,7 +37,8 @@
 // console.log(grocerylist);
 // ****************forEach******************************************
 //don't create new array
-//ForEach methos used to iterate the array by each value it won't return any value
+//ForEach methos used to iterate the array by each value it won't return any value and changes are saved
+//  in the original array
 // const prices = [];
 // const list1 = grocerylist.forEach((item) => {
 //   prices.push(item.price);
@@ -40,7 +48,7 @@
 // ****************map******************************************
 //map-it will return new array
 //impact on old array
-//return the new array
+//if we check and condition we will get the true/false in array.
 
 // const newprice = grocerylist.map((item) => {
 //   return { name: item.name, price: item.price * 2 };
@@ -157,6 +165,13 @@
 //and giive the singal value
 //start with initial value
 
+// const grocerylist = [
+//   { name: "Apple", price: 50, category: "fruits" },
+//   { name: "orange", price: 60, category: "fruits" },
+//   // { name: "tamoto", price: 30, category: "veg" },
+//   // { name: "Carrot", price: 20, category: "veg" },
+// ];
+
 // const totalval = grocerylist.reduce((currenttotal, item, index) => {
 //   return item.price + currenttotal;
 // }, 0);
@@ -166,6 +181,17 @@
 //   return item.price + currenttotal;
 // }, intiail);
 // console.log(totalval1); //320
+
+// var k = [1, 2, 3, 12, 23, 33, 3, 313];
+
+// var max = k.reduce(function (a, num) {
+//   if (a > num) {
+//     return a;
+//   } else {
+//     return num;
+//   }
+// }, k[0]);
+// console.log(max);
 
 // ****************Includes*****************************************
 //includes is used to find the elemement is present or not in the array
@@ -196,6 +222,14 @@
 // console.log(add);
 // console.log(add.sort());
 
+// let x=arr1.concat(arr2);
+// console.log("concat",x);
+
+// arr1.push(arr2);
+// /* console.log(arr1); */
+// console.log(arr1[6]);//[7,8,9,55]
+// console.log(arr1[6][2]);//9
+
 // ****************flat*****************************************
 
 //used to add the nested array values in recursively and display in one array
@@ -209,6 +243,11 @@
 // console.log(arr1.flat());
 // console.log(arr1.flat(2));
 // console.log(arr1.flat(3));
+
+// let y=[12,12,3,3,[3,5,6],[456,8],546];
+
+// let z=y.flat(Infinity);
+// console.log(z);//[12,12,3,3,3,5,6,456,8,546]
 
 // ****************flatMap*****************************************
 //flatmap is use full only at flat() with one value in inside array
@@ -244,6 +283,8 @@
 
 //*******************************Join************************************/
 
+// join: is used to convert the array in to string
+
 //it concatenate all elements of an  array & returns new string separated by separator
 //array.join("which one need add in between element in array")
 // var st = ["RRR", "KGF", "Pushpa", "KGF2"];
@@ -255,14 +296,14 @@
 
 //******************************for In & for of**********************************/
 
-const names = ["Hi", "bye", "good", "bad"];
+// const names = ["Hi", "bye", "good", "bad"];
 // console.log(arr);
 
 //for of gives the values of the array
-for (const n of names) {
-  console.log("for of", n);
-  console.log("for of", names[0]);
-}
+// for (const n of names) {
+//   console.log("for of", n);
+//   console.log("for of", names[0]);
+// }
 
 // // for In gives the indexs of the array
 // for (const n in names) {
@@ -390,3 +431,20 @@ for (const n of names) {
 //     console.log(object.farewell());
 //   },
 // };
+
+// let arr1=[1,2,3,4,56,7];
+// let arr2=[7,8,9,55];
+
+// console.log(Array.isArray(arr1));//true
+
+// console.log(Array.from(arr2));
+
+// console.log(Array.isArray("Arun"));//false
+// console.log(Array.from("Arun"));//["A","r","u","n"]
+
+// console.log(Array.from({name:"Arun"}));//[]
+// //To create the array from strings
+//  let a=10;
+//  let b=20;
+//  let c=30;
+//  console.log(Array.of(a,b,c));

@@ -35,3 +35,7 @@ function person(name){
     this.name=name;
 }
 const name1= new  person("Arun);
+
+4.what is javascript?
+
+ JS is  Interpreter programing language. 

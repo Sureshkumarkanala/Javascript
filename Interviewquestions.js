@@ -1,24 +1,3 @@
-/* Hoisting-Means accessing the varaible or
- function even before initializing  a value to it*/
-// for var- we get undefined in Hoisting
-console.log("X value in Hoisting is", x); //undefined
-var x;
-
-console.log("X value in Hoisting is", x); //undefined
-x = 10;
-
-console.log(" X value in Hoisting is", x); //10
-y = 100;
-
-console.log("Y value in Hoisting is", y); //100
-var y;
-
-let z;
-console.log("Z value in Hoisting is", z); //undefined
-
-z = 200;
-console.log("Z value in Hoisting is", z); //200
-
 //Closures
 
 // function a() {
@@ -48,3 +27,5 @@ console.log("Z value in Hoisting is", z); //200
 //   };
 // },
 //   console.log(1(16)));
+
+//"use Strict" --- Means all the Js code as  new vesion

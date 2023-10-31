@@ -1,3 +1,24 @@
+/* Hoisting-Means accessing the varaible or
+ function even before initializing  a value to it*/
+// for var- we get undefined in Hoisting
+console.log("X value in Hoisting is", x); //undefined
+var x;
+
+console.log("X value in Hoisting is", x); //undefined
+x = 10;
+
+console.log(" X value in Hoisting is", x); //10
+y = 100;
+
+console.log("Y value in Hoisting is", y); //100
+var y;
+
+let z;
+console.log("Z value in Hoisting is", z); //undefined
+
+z = 200;
+console.log("Z value in Hoisting is", z); //200
+
 //Functions_1
 
 // function test(a) {
@@ -6,22 +27,24 @@
 // var obj = {
 //   a: 30,
 // };
-// //console.log(obj.test(obj.a)); //Output: Error(obj.test is not a function)
+// console.log(test(10)); //200
+// console.log(obj.a); //30
+// console.log(test(obj.a)); //600
+// console.log(obj.test(obj.a)); //Output: Error(obj.test is not a function)
 
 // //Correct
 // console.log(test(obj.a)); //600
 // console.log(obj.a); //30
-// console.log(test()); //NaN
+// console.log(test()); //NaN- because no argument so function return NaN
 // console.log(test(10)); //200
 // ***********************************************************
 //Currying_1
 
 // var addNum = (a, b) => (c) => (d) => console.log(a + b);
-
 // console.log(addNum(10, 10));
 
-// output:(c) => (d) => console.log(a + b)
-// after '=>' what ever is  there it will print the same
+// // output:(c) => (d) => console.log(a + b)
+// // after '=>' what ever is  there it will print the same
 
 // var addNum = (a, b) => (c) => a + b;
 // console.log(addNum(10, 10));
@@ -31,22 +54,22 @@
 // var addNum = (a, b) => a + b;
 
 // console.log(addNum(10, 10));
-// output: (c) => 20
+// output:  20
 // ********************************************************
 
 //Hoisting_1
 
 // function test() {
-//   console.log(num); //Uncaught ReferenceError: num is not defined
+//   // console.log(num); //Uncaught ReferenceError: num is not defined
 //   if (true) {
-//console.log(num); //Uncaught ReferenceError: Cannot access 'num' before initialization
-// let num = 10;
-// const num1 = 20;
-// let num2 = 30;
-// console.log(num); //10
+//     // console.log(num); //Uncaught ReferenceError: Cannot access 'num' before initialization
+//     let num = 10;
+//     const num1 = 20;
+//     let num2 = 30;
+//     console.log(num); //10
 
-// {
-//   console.log(num); //10
+//     {
+//       console.log(num1); //20
 //     }
 //   }
 //   console.log(num); //Uncaught ReferenceError: num is not defined
@@ -107,15 +130,15 @@
 // test();
 
 // ***************Before Intializationn*************
-//var:Before Access
+// var:Before Access
 // console.log(y); //Undefined
 // var y = 10;
 
-//let:Before Access
+// //let:Before Access
 // console.log(a); //Cannot access 'a' before initialization
 // let a = 11;
 
-//const:Before Access
+// // const:Before Access
 // console.log(b); //Cannot access 'b' before initialization
 // const b = 12;
 
@@ -154,12 +177,12 @@
 // ******************************************************************
 // Hoisting_const_2
 // function test() {
-//   console.log(num);
+//   // console.log(num); //error
 //   const num = 20;
 //   if (true) {
 //     const num = 30;
 //   }
-//   console.log(num);
+//   console.log(num); //20
 // }
 
 // test();
@@ -197,8 +220,8 @@
 // }
 // test();
 
-var obj = {
-  a: 20,
-  //   test: () => test(),
-};
-console.log(a);
+// var obj = {
+//   a: 20,
+//   test: () => test(),
+// };
+// console.log(a);

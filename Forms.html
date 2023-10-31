@@ -60,7 +60,8 @@
       </textarea>
       <br />
 
-      <!-- If we not use the 'name' attribute we can select both values, you mention name then only we can select only one option -->
+      <!-- If we not use the 'name' attribute we can select both values, 
+        you mention name then only we can select only one option -->
       <input type="Hidden" />
       <br />
       <!-- Is used to Hide the input field to the user -->
@@ -156,32 +157,40 @@ readonly: user can only see the value but they can't change the value
 
   <select>
 
-    - Tag is alternative to the check box but we can see in dropdown
-    - when we wan't to select the multiple options we have to use the attribute 'multiple'
-    'size' attribute is useful  define to how many options are viewed by the user
+    - Tag is alternative to the check box but we can see in dropdown.
+    - when we wan't to select the multiple options we have to use the attribute 'multiple'.
+      'size' attribute is useful  define to how many options are viewed by the user
      -'selected'- default selected
      - if we not mention value tag default tag value will send to the server but we have to minimize the value
-     by using the value tag in the filed.
+     by using the value tag in the field.
     
 
      Attributes in the Form Tag:
      --------------------------
 
       Action - it defines after submission of the form data will go to the which page.
-      Method- defult -'get' means what data we are sending it shows in the url(caled as query string parameter),
-                        'post'-data won't be shows in the 'Url' is the best way for security reasons
-                        and in network tab payload(form data/name) -data will go in object form to the server
+      Method--'get'(default) means what data we are sending it shows in the url(called as query string parameter),
+            --'post'-data won't be shows in the 'Url' is the best way for security reasons
+                      and in network tab payload(form data/name) -data will go in object form to the server
 
 
       Name-Name for the form
-      Target-- is used show the page after submission in the new tab or same tab or new window
+       name="viewport" or name="description" or name="author"..
+      Target==_blank-- is used show the page after submission in the new tab or same tab or new window
 
 
       metaTag:  is use for search engine optimization  Author,viewport,charset,name,content,property,http-equiv
 
+      content='text';
+
+      http-equiv='content-security-policy' or 'content-type' or 'default-style 'or 'refresh'
+         
+    http-equiv --Provides an HTTP header for the information/value of the content attribute
+
                 viewport- element gives the browser instructions on how to control the page's dimenssions 
                           and scalling  based on the device we are using
 
+                          charset="UTF-8"
 
                 charset-The charset attribute specifies the character encoding for the HTML document 
                          and needs to be a valid characterncoding (examples include windows-1252, ISO-8859-2, Shift_JIS, and UTF-8). 
@@ -198,7 +207,16 @@ href= hyper reference.
 
 <a href=""> link name </a>
 
-Atrribute in the Anchor Tag
+Atrribute in the Anchor Tag:
+href
+hreflang
+media
+ping
+referrerpolicy
+rel
+target
+type
+download
 
 target="_blank"; - new page will display in diff tab 
 title="About page";  we can use title tag for every HTML element.
@@ -271,7 +289,7 @@ frameborder="1" -- we get the border
 
 
  Details Tag and  Summary Tag:
- ----------------------------
+ -----------------------------
 
  is used to display some summary/image/text when clicked on the heading or Icon/text
 

@@ -50,21 +50,21 @@
 //   -----------------------------
 // It can be used to invoke (call) a method with an owner object as an argument (parameter).
 
-const obj = { name: "KSK" };
+// const obj = { name: "KSK" };
 
-let fname = function (a, b) {
-  console.log(obj);
-  console.log(a);
-  console.log(b);
+// let fname = function (a, b) {
+//   console.log(obj);
+//   console.log(a);
+//   console.log(b);
 
-  return `${a} ${obj.name}. ${b} `;
-};
-console.log(fname.call(obj, "hi", "gd noon"));
+//   return `${a} ${obj.name}. ${b} `;
+// };
+// console.log(fname.call(obj, "hi", "gd noon"));
 
-function add(a, b) {
-  return a + b;
-}
-console.log(add(2, 2));
+// function add(a, b) {
+//   return a + b;
+// }
+// console.log(add(2, 2));
 
 // // ***************Apply****************
 // Apply() Function:
@@ -166,7 +166,7 @@ console.log(add(2, 2));
 // // bind will help us to apply the conntext of this during  expression
 
 // //bind is used to set the context of 'this' during the function expression
-// //we cant use the bind during the functio declaration
+// //we can'  t use the bind during the function declaration
 
 // // **syntax error(function declaration)
 // //  function () {
@@ -240,3 +240,66 @@ console.log(add(2, 2));
 // console.log("bind", m());
 
 // console.log(f());
+// +++++++++++++++++++++++++++++++++++++
+
+// Call and Apply:
+// --------------
+
+const inpnum = {
+  fname: "Suresh",
+  lname: "kumar",
+};
+
+const addnum = function (x, y) {
+  return this.fname + "" + this.lname + "" + x + "" + y;
+};
+
+console.log(addnum.call(inpnum, 30, 40));
+console.log(addnum.apply(inpnum, [30, 40]));
+
+const inpnumber = {
+  num1: 10,
+  num2: 20,
+};
+
+const addnumbers = function (x, y) {
+  return this.num1 + this.num2 + x + y;
+};
+
+console.log(addnumbers.call(inpnumber, 30, 40));
+console.log(addnumbers.apply(inpnumber, [30, 40]));
+
+const exp = addnumbers.bind(inpnumber, 30, 40);
+console.log(exp);
+
+const obj = {
+  name: "suresh",
+  age: 10,
+};
+
+const details = function (no) {
+  return this.name + "" + this.age + "" + no;
+};
+console.log(details.call(obj, 944));
+console.log(details.apply(obj, [944]));
+
+const expr = details.bind(obj, 944);
+console.log("bind", expr());
+
+const diff = {
+  fname: "Suresh",
+  lname: "kumar",
+  surname: "kanala",
+};
+
+const fullname = {
+  totalname: function x(age) {
+    console.log(age);
+    return this.fname + this.lname + this.surname + " age is " + age;
+  },
+};
+
+console.log("call is ", fullname.totalname.call(diff, 30));
+console.log("apply is", fullname.totalname.apply(diff, [30]));
+const bd = fullname.totalname.bind(diff, 30);
+console.log("bind is", bd());

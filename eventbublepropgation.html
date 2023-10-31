@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Event bubling and propagation</title>
+  </head>
+  <body>
+    <h1>event propagation and bubling</h1>
+
+    <div>
+      <ul id="images">
+        <li width="200px">
+          <img
+            src="C:\Users\Dell\Pictures\Screenshots\Tree.jpg"
+            alt="image2"
+            id="img2"
+          />
+        </li>
+        <li width="200px">
+          <img
+            src="C:\Users\Dell\Pictures\Screenshots\River.jpg"
+            alt="image3"
+            id="img3"
+          />
+        </li>
+        <li>
+          <img
+            src="C:\Users\Dell\Pictures\Screenshots\Sky.jpg"
+            alt="image1"
+            width="260px"
+            id="img1"
+          />
+        </li>
+      </ul>
+    </div>
+    <script>
+      let all = document.getElementById("images");
+      all.addEventListener(
+        "click",
+        function allchange() {
+          console.log("clicked on image id");
+          document.body.style.backgroundColor = "purple";
+        },
+        true //it will execute first then child will execute
+      );
+
+      let clk1 = document.getElementById("img1");
+      clk1.addEventListener("click", function bgchangeblue(e) {
+        console.log("clicked on  Image1");
+        // console.log(e.target.tagName);
+        let removeIt = e.target.parentNode;
+        removeIt.remove(); // to remove the image from the browser.
+        e.stopPropagation(); // only execute the inner event(event bubling not happening).
+        document.body.style.backgroundColor = "blue";
+      });
+
+      let clk2 = document.getElementById("img2");
+      clk2.addEventListener(
+        "click",
+        function bgcolorred() {
+          console.log("clciked on image 2");
+          document.body.style.backgroundColor = "red";
+        }
+        // true // this is event captiring and this will execute first(not like as bubling )
+      );
+      //first execute ineer later outer
+      let clk3 = document.getElementById("img3");
+      clk3.addEventListener("click", bgchangegrey);
+      function bgchangegrey(e) {
+        console.log("clicked on  Image3");
+        e.stopPropagation(); // only execute the inner event(event bubling not happening).
+        document.body.style.backgroundColor = "grey";
+      }
+    </script>
+  </body>
+</html>
+<!-- 
+//Normally 3 argument in addEventListener is true/false default is "false" when
+click on the image1 or A event first execute by the image later ul event(2
+events are attached to the event) default process is called "event bubling"
+means first execute the inner event, next outer event to prevent for this
+
+e.stopPropagation()= TO stop the execution of event bubling  -->

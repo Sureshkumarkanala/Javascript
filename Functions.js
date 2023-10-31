@@ -104,3 +104,62 @@ console.log(def());
 // display();
 
 // For arrow and Anonymus functions we can't call this directly we need assign to any variable and call that particulr variable
+
+(function () {
+  console.log("this is Annoymus");
+})();
+
+function add(n1, n2) {
+  console.log("in console", n1 + n2);
+}
+let val = add(1, 2);
+console.log(val); //undefined because function not return any value
+/* if we want to value we need mention return in function */
+
+function add1(n1, n2) {
+  val1 = n1 + n2;
+  return val1;
+}
+let val1 = add(1, 2); //3
+
+function nameprint(name) {
+  return `${name} logged in`; //undefined logged in
+}
+console.log(nameprint()); //becuase arguments are empty
+
+//Default params
+
+function nameprint(name = "Arun") {
+  if (undefined) {
+    console.log("please give name");
+    return `kinldy enter the name`; //if not use default parameter enter msg
+  }
+  return `${name}is logged in`; //Arun logged in
+}
+console.log(nameprint());
+
+function addvalues(...arg) {
+  console.log(arg);
+  [1, 2, 3]; //when we use the rest operator it make all the parameters in array
+}
+addvalues(1, 2, 3);
+
+//Passing the object as a parameter in function
+
+function handleobject(anyobj) {
+  console.log(`name is${anyobj.name} and age is${anyobj.age}`);
+}
+
+handleobject({
+  name: "Arun",
+  age: 30,
+});
+
+// same way we can pass array also as a parameter
+
+function handlearr(getarr) {
+  console.log(getarr); //[20,30,30]
+  return getarr[1]; //30
+}
+
+handlearr([20, 30, 30]);

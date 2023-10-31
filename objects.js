@@ -31,8 +31,8 @@
 // movie.name = "Bahuballi";
 // console.log(movie);
 
-// 2.using new keyowrd with object constructor or Object constructor :
-// -------------------------------------------------------------------
+// 2.using new keyowrd(Singalton object) with object constructor or Object constructor :
+// -------------------------------------------------------------------------------------
 
 // let movie1 = new Object();
 // console.log(movie1);
@@ -156,3 +156,209 @@ for (k in user1) {
 // console.log(obj);
 
 // // ******************************************************************
+
+// let obj={
+//   name:"Arun",
+//   age:30
+//   }
+//   console.log(obj['name']);
+
+// let obj = {
+//   name: "Arun",
+//   "age of person": 30,
+// };
+// console.log(obj.age); //it won't work we get error
+// console.log(obj["age of person"]);
+
+//this is the way acess the symbol inside obj
+
+// company = Symbol("HCLL");
+// let obj = {
+//   name: "Arun",
+//   "age of person": 30,
+//   [company]: "HCL",
+// };
+// console.log(obj.age); //it won't work we get error
+// console.log(obj["age of person"]);
+// console.log(obj[company]); //this is the way acess the symbol inside obj
+// console.log(obj.company); //it won't work
+
+//To restrict the changes in the object by using the freez method
+
+// let obj1 = {
+//   name: "Arun",
+//   "age of person": 30,
+// };
+// console.log(obj1.age);
+// console.log(obj1["age of person"]);
+// Object.freeze(obj1);
+// obj1.name = "Suresh";
+// console.log(obj1); //Name was not changed
+
+//using return in object with function
+
+// const objfun= function a(){
+//   console.log("function inside object");
+//   }
+//   /* console.log(objfun.a);//undefined */
+//   /* console.log(objfun()); */
+//   objfun();//function inisde object
+
+//   console.log("in console",objfun());//undefined
+
+//   const objfun1= function a(){
+//   console.log("function inside object with return");
+//   return "function inside object with return";
+//   }
+
+//   console.log("in console",objfun1());//function inside object with return
+
+// objfun2={
+//   name:"Arun",
+//   age:30,
+//   company:"HCL"
+//   }
+
+//    objfun2.greet= function (){
+//   console.log("Hello function")
+//   }
+//   /* console.log("Acess obj",objfun2.greet);//function returned(total function will come here) */
+
+//   /*
+//   console.log("in console",objfun2.greet());//undefined because no return */
+
+//   //acess the object values  here
+//   objfun2.greeting= function (){
+//   console.log(`Hello function${this.name}`)
+//   }
+
+//   console.log("console",objfun2.greeting());//function will execute but we will get undefined becaurse no return
+
+//   console.log("console",objfun2.greeting);
+
+// Object.assign,spred operator:
+// -----------------------------
+
+const obj11 = { 1: "a", 2: "b", isLoggedin: true };
+const obj22 = { 3: "c", 4: "d", isLoggedin: false };
+const obj33 = { 5: "e", 6: "f", isLoggedin: true };
+
+// /* console.log(obj11,obj22);//{{1:"a",2:b},{3:"c",4:"d"}}
+// const obj44=Object.assign({},obj11,obj22,obj33);
+// console.log(obj44);
+
+const obj55 = { ...obj11, ...obj22, ...obj32 };
+console.log(obj55);
+const obj66 = { obj11, obj22, obj33 };
+console.log("obj6", obj6);
+
+const obj77 = Object.assign(obj1, obj2, obj3);
+console.log("obj77", obj77); //here if key same will overwrite
+
+//Problem with Assign,spread
+// ----------------------------
+
+const obj1 = { 1: "a", 2: "b", isLoggedin: true };
+const obj2 = { 1: "c", 2: "d", isLoggedin: false };
+const obj3 = { 1: "e", 2: "f", isLoggedin: true };
+
+/* console.log(obj1,obj2);//{{1:"a",2:b},{3:"c",4:"d"}}
+const obj4=Object.assign({},obj1,obj2,obj3);
+console.log(obj4);
+
+ */ const obj5 = { ...obj1, ...obj2, ...obj3 };
+console.log(obj5);
+
+// output:
+
+// "obj7", "obj7", {
+//   1: "e",
+//   2: "f",
+//   isLoggedin: true
+// }
+
+const obj6 = { obj1, obj2, obj3 };
+console.log(obj6);
+
+// output:
+// ------
+
+// "obj6", {
+//   obj1: {
+//     1: "a",
+//     2: "b",
+//     isLoggedin: true
+//   },
+//   obj2: {
+//     1: "c",
+//     2: "d",
+//     isLoggedin: false
+//   },
+//   obj3: {
+//     1: "e",
+//     2: "f",
+//     isLoggedin: true
+//   }
+// }
+
+const obj7 = Object.assign(obj1, obj2, obj3);
+console.log("obj7", obj7); //here if key same will overwrite
+
+// output:
+
+// "obj7", "obj7", {
+//   1: "e",
+//   2: "f",
+//   isLoggedin: true
+// }
+
+const objperson = {
+  name: "Arun",
+  age: 30,
+  company: "HCL",
+  address: "bglr",
+};
+let x = Object.keys(objperson);
+let y = Object.values(objperson);
+let z = Object.entries(objperson);
+
+console.log(x); //["name","age","company","address"]
+console.log(y); //["Arun",30,"HCL","bglr"]
+console.log(z); //[["name","Arun"],["age",30],["company","HCL"],["address","bglr"]]
+
+//To find the key value exixt or not
+
+console.log(objperson.hasOwnProperty("name")); //true
+
+const objperson1 = {
+  name: "Arun",
+  age: 30,
+  company: "HCL",
+  address: {
+    city: "bglr",
+    state: "KA",
+  },
+};
+
+// const {address}=objperson1;
+// console.log(addrss);
+
+//{
+//   city: "bglr",
+//   state: "KA"
+// }
+
+// const {address: A}=objperson1;
+// console.log(A);
+//{
+//   city: "bglr",
+//   state: "KA"
+// }
+
+let p = Object.keys(objperson1);
+let q = Object.values(objperson1);
+let r = Object.entries(objperson1);
+
+console.log(p); //["name","age","company","address"]
+console.log(q); //["Arun",30,"HCL",{city:"bglr",state:"KA"}]
+console.log(r); //[["name","Arun"],["age",30],["company","HCL"],["address",{city:"bglr",state:"KA"}]]

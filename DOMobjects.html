@@ -1,28 +1,33 @@
 
 <!DOCTYPE html>
 <head>
-    
 </head>
 <body>
-    
-        <div id="first">
-            <h1  >This is h1 tag Accessing the content by using the ID...<br /></h1>
-         <h1 id="child"><span>This is child</span> </h1>
+           <div >
+         <h1 class="first"><span>This is child</span> </h1>
         </div> 
-        <!-- <h1 id="second"> This element id is second</h1>
-        <p>This is Paragraph added to the child of id first</p> -->
+        <h1 class="first" >This is h1 tag Accessing the content by using the ID...<br /></h1>
+        <h1 id="ss"> This element id is second</h1>
+        <p>This is Paragraph added to the child of id first</p> 
 
-        <!-- <h2 id="second">This is h2 tag id second </h2> -->
+        <h2 id="second">This is h2 tag id second </h2>
+        <h3 id="three">This is h3 tag</h3>
+
         <script>
+    //      var x=document.getElementsByClassName("first");
+    //    for(let i=0;i<x.length;i++){
+    //     console.log(x[i].innerText);
+    //    }
         // Accessing the content by using the ID
-        var data=document.getElementById("first")
-        //  console.log(data.innerText);
+        // var data=document.getElementById("ss");
+        //  console.log("ss",data.innerText);
 
         //creating the new tag and  and add  data in to the browser
 
-        // var child=document.createElement("div");
-        // child.innerText="This is Paragraph added to the child of id first";
-        // console.log(child);
+        var child=document.createElement("div");
+        child.innerText="This is Paragraph added to the child of id first";
+        console.log("Child text",child);
+        
 
         // display in to the browser 
         //  var parent=document.getElementById("first");
@@ -70,15 +75,10 @@
         //Replace with another tag
         //Here child tag is replaced with new rep tag
 
-        var rep=document.createElement("h1");
-        rep.innerText="This is the replacement Tag";
+        // var rep=document.createElement("h1");
+        // rep.innerText="This is the replacement Tag";
 
-        child.replaceWith(rep);
-
-
-
-
+        // child.replaceWith(rep);
     </script>
 </body>
-
 </html>
