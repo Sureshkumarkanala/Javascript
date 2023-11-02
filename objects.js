@@ -362,3 +362,25 @@ let r = Object.entries(objperson1);
 console.log(p); //["name","age","company","address"]
 console.log(q); //["Arun",30,"HCL",{city:"bglr",state:"KA"}]
 console.log(r); //[["name","Arun"],["age",30],["company","HCL"],["address",{city:"bglr",state:"KA"}]]
+
+//how to check empty obj and array in condition
+
+const arr1 = {};
+
+if (arr1.lenght === 0) {
+  console.log("array checked");
+}
+
+const obj10 = {};
+if (Object.keys(obj10).length == 0) {
+  console.log("object checked");
+}
+
+//nullish collision operator work only for null and undefined
+
+//if we get the null from the DB it will store  second  value in variable
+const val1 = null ?? 10;
+console.log(val1);
+
+const val2 = undefined ?? 20;
+console.log(val2);

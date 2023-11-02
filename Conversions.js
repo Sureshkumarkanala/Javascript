@@ -168,3 +168,11 @@ obj2.age = 40;
 
 console.log("After obj1", obj1); //{name: "Arun",age:30}
 console.log("after obj2", obj2); //{name: "Arun",age:40}
+
+// falsy values-
+
+// false,0,-0,"",BigInt 0n,null,undefined,NaN
+
+//truthy values
+
+// "0", 'false', " ", [],{}, function(){}
