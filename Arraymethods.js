@@ -437,6 +437,8 @@ console.log(grocerylist); //push the element in to array
 
 // console.log(Array.isArray(arr1));//true
 
+//Array.from --> Method is used to normal data in to Array
+
 // console.log(Array.from(arr2));
 
 // console.log(Array.isArray("Arun"));//false
