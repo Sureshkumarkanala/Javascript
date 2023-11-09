@@ -53,11 +53,32 @@
        odit ratione laborum sit. Itaque laborum similique asperiores nulla
        obcaecati odit harum ab? Ipsam quo iure minima rerum.
       </pre>
+
+      <div class="parent">
+        <ul>
+          <li class="day">Monday</li>
+          <li class="day">Tuesday</li>
+          <li class="day">wednesday</li>
+          <li class="day">Thursday</li>
+          <li class="day">Friday</li> 
+        </ul>
+      </div>
       <script>
         console.log(document.getElementById('title'));
         console.log(document.getElementById('title').getAttribute('class'));
         console.log(document.getElementById('title').setAttribute('class','test'));
-
+      </script>
+      <script>
+       const parent=document.querySelector('.parent');
+       console.log("parent data",parent);
+       for(let i=0;i<parent.children.length;i++){
+      console.log(parent.children[i].innerText);
+      parent.children[i].style.color='green'
+      console.log(parent.firstChild);
+      console.log(parent.lastChild);
+      
+      }
+       
 
       </script>
     </p>
@@ -67,7 +88,9 @@
 
 
 <!-- Chai AUR CODE - 32 video -->
+<!-- 
+ title.textcontext -- it will give display none text also
+title.innerText-- it will give only visible data on the browser
+title.innerHTML-- it will along with the HTML tags  -->
 
-title.textcontext --> it will give display none text also
-title.innerText--> it will give only visible data on the browser
-title.innerHTML--> it will along with the HTML tags
+

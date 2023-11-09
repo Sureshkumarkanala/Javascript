@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Creating a element</title>
+  </head>
+  <body style="background-color: #212121">
+    <h1>Create element in DOM</h1>
+    <script>
+      const div = document.createElement("h1");
+      console.log("div is ", div);
+      div.innerText = "Element created";
+      div.id = "#newid";
+      div.style.color = "green";
+      //to add custom attribes
+      div.setAttribute("title", "title created");
+
+      div.innerText = "Created Element";
+      document.body.appendChild(div);
+
+      const addText = document.createTextNode("Text added");
+      console.log("rdtert", "h1");
+      div.appendChild(addText);
+      document.body.appendChild(div);
+    </script>
+  </body>
+</html>
