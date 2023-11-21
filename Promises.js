@@ -1,4 +1,54 @@
-console.log("promises");
+// console.log("Demo promise");
+// const promises = new Promise((resolve, reject) => {
+//   console.log("Inside the promise ");
+//   setTimeout(() => {
+//     //In resolve we can pass object or array
+//     resolve(["Arun", "Suresh"]);
+//     console.log("Timeout function");
+//   }, 1000);
+// }).then(function (data) {
+//   console.log("first then", data);
+//   return data;
+// });
+// promises
+//   .then((data) => {
+//     data.map((x) => {
+//       console.log(x);
+//     });
+//   })
+//   .catch(() => {
+//     console.log("ERROR");
+//   })
+//   .finally(() => {
+//     console.log("Promise working");
+//   });
+
+const promise2 = new Promise((resolve, reject) => {
+  console.log("inside promise 2");
+  let condition = "true";
+  const persondata = { name: "Arun", age: 30, company: "HCL" };
+  if (persondata) {
+    console.log("inside the loop");
+    resolve(persondata);
+  } else {
+    console.log("inside the else");
+    reject();
+  }
+})
+  .then((data) => {
+    let objdata = Object.values(data);
+    console.log(objdata);
+    return objdata;
+  })
+  .then((x) => {
+    console.log("inside try", x);
+    x.map((x) => {
+      console.log("data is", x);
+    });
+  })
+  .catch(() => {
+    console.log("inside the catch");
+  });
 
 //Actually we will over came the issues in the callback that are
 //  callbackhell, Inversion control by using the promises.
@@ -29,7 +79,7 @@ console.log("promises");
 // const val = 10;
 // callbackhell(val);
 
-const cart = ["shoes", "shirts", "pants"];
+// const cart = ["shoes", "shirts", "pants"];
 
 // here createorder is a API it will give the orderid and is input to the proceedToPayment API
 // the both are async
@@ -83,7 +133,7 @@ const cart = ["shoes", "shirts", "pants"];
 //     proceedToDelivery(paymentId);
 //   });
 
-//Real Promise y using ApI
+//Real Promise  using ApI
 
 // const GITHUB_API = "https://api.github.com/users/akshaymarch7";
 //here user is a object it will capture the data which is return by the promise(fetch)
@@ -102,22 +152,22 @@ const cart = ["shoes", "shirts", "pants"];
 
 // Promise chaining(must use the return in chaining for data flow properly)
 
-createOrder(cart)
-  .then(function (orderId) {
-    return proceedToPayment(orderId);
-  })
-  .then(function (paymentInfo) {
-    return showOrderSummary(paymentInfo);
-  })
-  .then(function (summaryInfo) {
-    return updateDetails(summaryInfo);
-  });
+// createOrder(cart)
+//   .then(function (orderId) {
+//     return proceedToPayment(orderId);
+//   })
+//   .then(function (paymentInfo) {
+//     return showOrderSummary(paymentInfo);
+//   })
+//   .then(function (summaryInfo) {
+//     return updateDetails(summaryInfo);
+//   });
 
 // same in arrow function way
 
-createOrder(cart)
-  .then((orderId) => proceedToPayment(orderId))
+// createOrder(cart)
+//   .then((orderId) => proceedToPayment(orderId))
 
-  .then((paymentInfo) => showOrderSummary(paymentInfo))
+//   .then((paymentInfo) => showOrderSummary(paymentInfo))
 
-  .then((summaryInfo) => updateDetails(summaryInfo));
+//   .then((summaryInfo) => updateDetails(summaryInfo));

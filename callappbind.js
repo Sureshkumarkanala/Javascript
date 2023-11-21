@@ -19,16 +19,17 @@
 // By using the 'call' we will do the function barrowing
 // we can Barrow functions from other objects and use it with the data of some other objects.
 // call: to stabulise the context of this keyword.
+// call will pass the current execution context to the another function
 //                      OR
 
 // It can be used to invoke (call) a method with an owner object as an argument (parameter).
 // With call(), an object can use a method belonging to another object.
 
-// const person = {
-//   fullname: function (firstname, lastname) {
-//     return this.firstname + "" + this.lastname;
-//   },
-// };
+const person = {
+  fullname: function (firstname, lastname) {
+    return this.firstname + "" + this.lastname;
+  },
+};
 
 // const person1 = {
 //   firstname: "Suresh",
@@ -254,8 +255,8 @@ const addnum = function (x, y) {
   return this.fname + "" + this.lname + "" + x + "" + y;
 };
 
-console.log(addnum.call(inpnum, 30, 40));
-console.log(addnum.apply(inpnum, [30, 40]));
+// console.log(addnum.call(inpnum, 30, 40));
+// console.log(addnum.apply(inpnum, [30, 40]));
 
 const inpnumber = {
   num1: 10,
@@ -266,25 +267,25 @@ const addnumbers = function (x, y) {
   return this.num1 + this.num2 + x + y;
 };
 
-console.log(addnumbers.call(inpnumber, 30, 40));
-console.log(addnumbers.apply(inpnumber, [30, 40]));
+// console.log(addnumbers.call(inpnumber, 30, 40));
+// console.log(addnumbers.apply(inpnumber, [30, 40]));
 
-const exp = addnumbers.bind(inpnumber, 30, 40);
-console.log(exp);
+// const exp = addnumbers.call(inpnumber, 30, 40);
+// console.log("call", exp);
 
-const obj = {
-  name: "suresh",
-  age: 10,
-};
+// const obj = {
+//   name: "suresh",
+//   age: 10,
+// };
 
-const details = function (no) {
-  return this.name + "" + this.age + "" + no;
-};
-console.log(details.call(obj, 944));
-console.log(details.apply(obj, [944]));
+// const details = function (no) {
+//   return ` name is ${this.name} at age ${this.age}  and rollNo is ${no}`;
+// };
+// console.log(details.call(obj, 944));
+// console.log(details.apply(obj, [944]));
 
-const expr = details.bind(obj, 944);
-console.log("bind", expr());
+// const expr = details.bind(obj, 944);
+// console.log("bind", expr());
 
 const diff = {
   fname: "Suresh",
@@ -299,7 +300,25 @@ const fullname = {
   },
 };
 
-console.log("call is ", fullname.totalname.call(diff, 30));
-console.log("apply is", fullname.totalname.apply(diff, [30]));
-const bd = fullname.totalname.bind(diff, 30);
-console.log("bind is", bd());
+// console.log("call is ", fullname.totalname.call(diff, 30));
+// console.log("apply is", fullname.totalname.apply(diff, [30]));
+// const bd = fullname.totalname.bind(diff, 30);
+// console.log("bind is", bd());
+
+const personn = {
+  age: "30",
+  company: "HCl",
+};
+
+const employee = function (name) {
+  return `Name is ${name} age is ${this.age} and company is ${this.company}`;
+};
+
+const Arun = employee.call(personn, "Arun");
+console.log(Arun);
+
+const Yamuna = employee.apply(personn, ["Yamuna"]);
+console.log(Yamuna);
+
+const Suresh = employee.bind(personn, "Suresh");
+console.log(Suresh());
